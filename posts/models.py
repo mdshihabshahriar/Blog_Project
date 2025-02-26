@@ -9,6 +9,7 @@ class Post(models.Model):
     content = models.TextField()
     category = models.ManyToManyField(Category) # ekta post multiple categorir moddhe thakte pare abar ekta categorir moddhe multiple post thakte pare
     author = models.ForeignKey(User,on_delete = models.CASCADE)
+    image = models.ImageField(upload_to='posts/media/uploads/',blank=True,null=True)
     
     def __str__(self):
         return self.title
