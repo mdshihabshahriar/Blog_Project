@@ -15,7 +15,7 @@
       expedita culpa qui quas voluptate? Nulla, laudantium?</p>
   </div>
   <div class="col-6">
-    <img src="{% static 'header.jpg' %}" >
+    <img src="{% static 'header.jpg' %}">
   </div>
 </div>
 
@@ -43,8 +43,9 @@
         <div class="card mx-2">
           <div class="card-body">
             <img class="card-img-top" src="{{post.image.url}}" alt="Card image cap">
-            <h5 class="card-title">{{post.title}}</h5>
-            <p class="card-text">{{post.content}}</p>
+            <h5 class="card-title"><a href="{% url 'detail_post' post.id %}"
+                class="text-decoration-none text-dark">{{post.title}}</a></h5>
+            <p class="card-text">{{post.content|truncatewords:10}}</p>
             <p>Author : {{post.author.first_name}} {{post.author.last_name}}</p>
             <p>
               Category : {% for cat in post.category.all %}
