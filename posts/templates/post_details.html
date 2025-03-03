@@ -18,12 +18,13 @@
 </div>
 
 <div class="card m-2">
-    Total Comments : {{comments | length}}
-    <div class="card-body">
-      {% for comment in comments %}
-        <p>{{comment.name}}</p>
-      {% endfor %}
+    <h5 class="p-3">Total Comments : {{comments | length}}</h5>
+    {% for comment in comments %}
+    <div class="card-body border m-2">
+        <p><b>{{comment.name}}</b> {{comment.created_on}}</p>
+        <p>{{comment.body}}</p>
     </div>
+      {% endfor %}
   </div>
 
 <div class="card m-2">
